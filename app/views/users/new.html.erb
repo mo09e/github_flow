@@ -1,40 +1,31 @@
-<table>
-  <tr>
-    <th><h3>Sign up</h3></th>
-  </tr>
-  <tr>
-    <th>
-      <% if @user.errors.any? %>
-      <div id="error_explanation">
-      <h3><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h3>
-      <ul>
+<h3>Sign up</h3>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+  <h3><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h3>
+    <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-      </div>
-      <% end %>
-    </th>
-  </tr>
-      <%= form_with(model: @user, local: true) do |f| %>
-  <tr>
-    <td><%= f.label :name, "お名前" %></td>
-    <td><%= f.text_field :name %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :email %></td>
-    <td><%= f.email_field :email %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :password, "パスワード" %></td>
-    <td><%= f.password_field :password %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :password_confirmation, "パスワード（確認用）" %></td>
-    <td><%= f.password_field :password_confirmation %></td>
-  </tr>
-  <tr>
-    <td><%= f.submit "Sign Up!" %></td>
-  </tr>
-      <% end %>
-</table>
+</div>
+<% end %>
+
+<%= form_with(model: @user, local: true) do |f| %>
+<p>
+  <%= f.label :name, "お名前" %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</p>
+<p>
+  <%= f.label :password, "パスワード" %>
+  <%= f.password_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirmation, "パスワード（確認用）" %>
+  <%= f.password_field :password_confirmation %>
+</p>
+<p><%= f.submit "Sign Up!" %></p>
+<% end %>
