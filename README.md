@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Ruby on Rails基礎シリーズ課題【FacebookClone】](https://diver.diveintocode.jp/curriculums/1303)
 
 Things you may want to cover:
 
