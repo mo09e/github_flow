@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <p><%= form.label :title %></p>
+    <p><%= form.text_field :title %></p>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <p><%= form.label :content %></p>
+    <p><%= form.text_area :content %></p>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <p><%= form.label :image %></p>
     <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-    <%= form.file_field :image %>
+    <p><%= form.file_field :image %></p>
     <%= form.hidden_field :image_cache %>
   </div>
 

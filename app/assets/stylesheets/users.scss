@@ -1,3 +1,129 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 共通関係　================================  */
+body {
+  background-color: #ECE9D8;
+  color: #19162B;
+  font-family: 'Avenir Next',"Hiragino Kaku Gothic ProN","游ゴシック Medium",YuGothic,YuGothicM,Meiryo,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  color: #110E00;
+
+  &:visited {
+    color: #363226;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #110E00;
+  }
+}
+
+/*  ヘッダー ================================ */
+header {
+  width: 100%;
+  background-color: #D6C28F;
+  color: #F37606;
+  height: 50px;
+  margin: 0;
+  position: fixed;
+}
+
+.logo {
+  width: 300px;
+  float: left;
+  margin-top: 15px;
+  color: #ECE9D8;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.header_menu{
+  display: inline-block;
+  margin-top: 15px;
+  text-align: center;
+}
+
+header a {
+  color: #F37606;
+  padding-left: 10px;
+
+  &:visited {
+    color: #F37606;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #F37606;
+  }
+}
+
+/*  フッター ================================ */
+footer {
+  width: 100%;
+  height: 30px;
+  background-color: #D6C28F;
+  padding: 10px 0 10px 0;
+  color: #F37606;
+  margin: auto;
+  position: fixed;
+  font-size: 12px;
+  bottom: 0;
+  text-align:center;
+}
+
+/* Blog top　================================  */
+.main {
+  padding-top: 20px;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  text-align: center;
+}
+
+#main_table {
+  border-collapse: collapse;
+  border-spacing: 5px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+table, th, td {
+  border-style: none !important;
+}
+
+.alt-table-responsive {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* SignUp Login Blog show,edit　=================  */
+
+#main_layout {
+  margin-top: 50px;
+  text-align: left;
+}
+
+/* メッセージ関係 　================================ */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#notice {
+  color: #00ACAE;
+}

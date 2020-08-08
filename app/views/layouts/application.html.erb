@@ -10,17 +10,27 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Blog List", blogs_path(current_user.id) %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+    <header class="sticky-top">
+      <div calss="header_menu">
+        <p class="logo">FaceBookClone</p>
+        <p class="header_menu">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+          <% end %>
+          <% if logged_in? %>
+            <%= link_to "Profile", user_path(current_user.id) %>
+            <%= link_to "Blog List", blogs_path(current_user.id) %>
+            <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+          <% else %>
+            <%= link_to "Sign up", new_user_path %>
+            <%= link_to "Login", new_session_path %>
+          <% end %>
+          </p>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="fixed-bottom">
+      <p>2020.08 Hello world!</p>
+    </footer>
   </body>
 </html>

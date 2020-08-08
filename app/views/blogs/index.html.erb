@@ -1,33 +1,36 @@
-<p id="notice"><%= notice %></p>
-
+<br>
+<div class="main">
 <h1>Blogs</h1>
+  <div class="container">
+    <div class="alt-table-responsive">
+      <table class="table" id="main_table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Image</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.user.name %></td>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.image %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog), data: { confirm: '本当に編集していいですか？' } %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td class="col-ms-1 col-md-2" id="post_name"><%= blog.user.name %></td>
+              <td class="col-ms-2 col-md-2" id="post_title"><%= blog.title %></td>
+              <td class="col-ms-3 col-md-6" id="post_content"><%= blog.content %></td>
+              <td class="col-ms-3 col-md-2" id="post_img"><%= blog.image %></td>
+              <td><%= link_to 'Show', blog %></td>
+              <td><%= link_to 'Edit', edit_blog_path(blog), data: { confirm: '本当に編集していいですか？' } %></td>
+              <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+  <%= link_to 'New Blog', new_blog_path %>
+</div>
