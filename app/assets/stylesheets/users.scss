@@ -29,38 +29,50 @@ header {
   width: 100%;
   background-color: #D6C28F;
   color: #F37606;
-  height: 50px;
+  height: 70px;
   margin: 0;
   position: fixed;
 }
 
-.logo {
-  width: 300px;
-  float: left;
-  margin-top: 15px;
-  color: #ECE9D8;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.header_menu{
-  display: inline-block;
-  margin-top: 15px;
-  text-align: center;
-}
-
 header a {
-  color: #F37606;
+  color: #ECE9D8;
   padding-left: 10px;
 
   &:visited {
-    color: #F37606;
+    color: #ECE9D8;
   }
 
   &:hover {
     color: #fff;
     background-color: #F37606;
   }
+}
+
+.logo {
+  width: 200px;
+  float: left;
+  margin-left: 50px;
+  color: #ECE9D8;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#logo-link a {
+  color: #ECE9D8;
+  text-decoration: none;
+}
+
+.header_layout {
+  display: inline-block;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.header_menu {
+  display: inline-block;
+  margin-top: 10px;
+  padding-left: 30px;
+  text-align: center;
 }
 
 /*  フッター ================================ */
@@ -125,5 +137,8 @@ table, th, td {
 }
 
 #notice {
-  color: #00ACAE;
+  color: #F37606;
+  display: inline-block;
+  margin-top: 10px;
+  padding-left: 30px;
 }

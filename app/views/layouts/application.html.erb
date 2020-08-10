@@ -11,12 +11,10 @@
 
   <body>
     <header class="sticky-top">
-      <div calss="header_menu">
-        <p class="logo">FaceBookClone</p>
+      <div calss="header_layout">
+        <!-- <p class="logo">FaceBookClone</p> -->
+        <h3><span class="label label-default logo"　id="logo-link"><%= link_to "FaceBookClone", new_session_path %></span></h3>
         <p class="header_menu">
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-          <% end %>
           <% if logged_in? %>
             <%= link_to "Profile", user_path(current_user.id) %>
             <%= link_to "Blog List", blogs_path(current_user.id) %>
@@ -25,7 +23,8 @@
             <%= link_to "Sign up", new_user_path %>
             <%= link_to "Login", new_session_path %>
           <% end %>
-          </p>
+        </p>
+        <p id="notice"><%= notice %></p>
       </div>
     </header>
     <%= yield %>
