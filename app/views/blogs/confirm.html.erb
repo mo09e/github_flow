@@ -1,14 +1,21 @@
-<h1>確認画面</h1>
-<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
-  <p>title:<%= @blog.title %></p>
-  <p>content:<%= @blog.content %></p>
-  <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "投稿する" %>
-<% end %>
-<%= form_with(model:@blog, url:new_blog_path, local:true, method:"get") do |form| %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: "back" %>
+<%= form_with(model: @blog, local: true) do |form| %>
+  <br>
+  <div class="container" id="main_layout">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h3>確認画面</h3>
+        <%= form.hidden_field :title %>
+        <%= form.hidden_field :content %>
+        <p>title:<%= @blog.title %></p>
+        <p>content:<%= @blog.content %></p>
+        <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
+        <%= form.hidden_field :image_cache %>
+        <%= form.submit "投稿する" %>
+        <% end %>
+        <%= form_with(model:@blog, url:new_blog_path, local:true, method:"get") do |form| %>
+        <%= form.hidden_field :image_cache %>
+        <%= form.submit "戻る", name: "back" %>
+      </div>
+    </div>
+  </div>
 <% end %>

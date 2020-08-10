@@ -31,13 +31,13 @@ class BlogsController < ApplicationController
   def create
     @blog = current_user.blogs.build(blog_params)
 
-    respond_to do |format|
+    if params[:back]
+      render :new
+    else
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        redirect_to blogs_path, notice: "Blog was successfully created."
       else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
@@ -45,14 +45,10 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-    respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
-      else
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "'Blog was successfully updated.'"
+    else
+      render :edit
     end
   end
 

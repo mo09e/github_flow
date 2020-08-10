@@ -32,6 +32,14 @@ header {
   height: 70px;
   margin: 0;
   position: fixed;
+  padding: 0px;
+  z-index: 1;
+}
+
+header:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 header a {
@@ -97,6 +105,13 @@ footer {
   height: auto;
   min-height: 100%;
   text-align: center;
+}
+
+.main-logo {
+  color: #19162B;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 50px;
 }
 
 #main_table {
