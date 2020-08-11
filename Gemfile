@@ -18,11 +18,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'bcrypt', '3.1.11'
-
 gem 'pry-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
+
+gem 'bcrypt', '3.1.11'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

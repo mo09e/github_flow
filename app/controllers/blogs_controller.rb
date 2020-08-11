@@ -1,21 +1,17 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
-  before_action :set_current_user
+  before_action :authenticate_user, only: [:index]
 
   include SessionsHelper
 
-  def set_current_user
-    #session[:user_id]に格納されているIDを元にユーザデータを格納
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
-
   def authenticate_user
-    if @current_user == nil
+    if @current_user ||= session[:user_id]
+      redirect_to  blogs_path
+      # binding.pry
+    else
       flash[:notice] = "ログインが必要です。"
       redirect_to new_session_path
-    else
-      redirect_to blogs_path
     end
   end
 
