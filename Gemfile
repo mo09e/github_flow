@@ -18,10 +18,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carrierwave'
 gem 'mini_magick'
 
-gem 'pry-rails'
-gem 'better_errors'
-gem 'binding_of_caller'
-
 gem 'bcrypt', '3.1.11'
 
 group :development, :test do
