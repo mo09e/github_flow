@@ -1,15 +1,11 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user, only: [:index]
 
   include SessionsHelper
 
   def authenticate_user
-    if @current_user ||= session[:user_id]
-      redirect_to  blogs_path
-      # binding.pry
-    else
+    if @current_user == session[:user_id]
       flash[:notice] = "ログインが必要です。"
       redirect_to new_session_path
     end
@@ -89,12 +85,5 @@ class BlogsController < ApplicationController
 
   def blog_params
     params.require(:blog).permit(:title, :content, :image, :image_cache, :user_id)
-  end
-
-  def correct_user
-     note = Blog.find(params[:id])
-     if current_user.id = blog.user_id
-       redirect_to new_session_path
-     end
   end
 end
